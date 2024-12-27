@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Care Connect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+.bg-gradient {
+      background: linear-gradient(to bottom right, #2c003e, #4b0082, #000000);
+    }
+    .button-hover:hover {
+      background: #3d005a; 
+    }
+</style>
+</head>
+
+<body class="bg-gradient text-white min-h-screen">
+  <header class="bg-opacity-80 bg-black">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 id="care-text" class="text-3xl font-bold"></h1> 
+      <nav class="flex space-x-4">
+        <a href="/login"><button class="bg-white bg-opacity-10 px-4 py-2 rounded hover:bg-opacity-20">Login</button></a>
+        <button class="bg-white bg-opacity-10 px-4 py-2 rounded hover:bg-opacity-20">Home</button>
+      </nav>
+    </div>
+  </header>
+  <script>
+    function typeEffect(elementId, text, speed) {
+      let i = 0;
+      const element = document.getElementById(elementId);
+
+      function type() {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, speed);
+        } else {
+          setTimeout(() => {
+            element.innerHTML = '';
+            i = 0;
+            type(); 
+          }, 1000); 
+        }
+      }
+
+      type();
+    }
+    typeEffect('care-text', 'Care Connect', 100); 
+
+
+
+   
+    window.onload = function() {
+  const textElement = document.getElementById('care-write');
+  const text = textElement.innerText; 
+  textElement.innerText = ''; 
+
+  let index = 0;
+  const interval = setInterval(() => {
+    if (index < text.length) {
+      textElement.innerText += text.charAt(index); 
+      index++;
+    } else {
+      clearInterval(interval); 
+    }
+  }, 100); 
+};
+
+
+
+    
+  </script>
+  <div class="bg-black h-4"></div>
+  <h1 id="care-write" class="text-3xl font-bold text-center mt-8 text-white">Top Departments Of Our Care Connect</h1>
+  <main class="container mx-auto py-8 px-6">
+    <div class="grid grid-cols-3 gap-6">
+    
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="/cardiology.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Cardiology</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="/neurology.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Neurology</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="/orthopedics.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Orthopedics</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="/pedia.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Pediatrics</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="/der.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Dermatology</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="/onco.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Oncology</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="/radio.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Radiology</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="/emer.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Emergency Medicine</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+
+      <div class="bg-black bg-opacity-80 shadow-md rounded-2xl overflow-hidden">
+        <img src="gynac.jpg" alt="Department Image" class="w-full h-48 object-cover rounded-t-2xl">
+        <p class="text-center mt-4 text-white">Gynecology</p>
+        <div class="p-4">
+          <button class="bg-gradient text-white px-4 py-2 rounded w-full button-hover">Search For Doctors</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>

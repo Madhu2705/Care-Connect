@@ -1,0 +1,69 @@
+[
+  {
+    "username": "madhu",
+    "password": "123456789"
+  },
+  {
+    "username": "madhu",
+    "password": "245896"
+  },
+  {
+    "username": "diksha",
+    "password": "1245987"
+  },
+  {},
+  {
+    "name": "madhu",
+    "age": "19",
+    "phoneno": "9165487596",
+    "email": "madhu@gmail.com"
+  },
+  {
+    "name": "diksha",
+    "age": "20",
+    "phoneno": "15489675",
+    "email": "diksha@gmail.com"
+  },
+  {
+    "name": "riya",
+    "age": "39",
+    "phoneno": "9165487596",
+    "email": "riya@gmail.com"
+  },
+  {
+    "name": "nitin",
+    "age": "15",
+    "phoneno": "9158649875",
+    "email": "nitin@gmail.com"
+  },
+  {
+    "name": "hi",
+    "age": "19",
+    "phoneno": "15489675",
+    "email": "wdbhjb@gmail.com"
+  },
+  {
+    "name": "madhu",
+    "age": "20",
+    "phoneno": "15489675",
+    "email": "nitin@gmail.com"
+  },
+  {
+    "name": "nj",
+    "age": "25",
+    "phoneno": "12345678899",
+    "email": "diksha@gmail.com"
+  },
+  {
+    "name": "Madhu ",
+    "age": "20",
+    "phoneno": "123654789",
+    "email": "madhu2056.be23@chitkara.edu.in"
+  },
+  {
+    "name": "madhu",
+    "age": "20",
+    "phoneno": "15489675",
+    "email": "wdbhjb@gmail.com"
+  }
+]
