@@ -9,10 +9,22 @@ const server = http.createServer((req, res) => {
     if (req.method === 'GET') {
         switch (req.url) {
             case '/': {
-                fs.readFile(path.join(__dirname, 'index.html'), 'utf-8', (err, data) => {
+                fs.readFile(path.join(__dirname, 'home.html'), 'utf-8', (err, data) => {
                     if (err) {
                         res.writeHead(500, { 'Content-Type': 'text/plain' });
                         res.end('Error reading the Home page');
+                        return;
+                    }
+                    res.writeHead(200, { 'Content-Type': 'text/html' });
+                    res.end(data);
+                });
+                break;
+            }
+            case '/index.html': { // Serve the services page when visiting '/index.html'
+                fs.readFile(path.join(__dirname, 'index.html'), 'utf-8', (err, data) => {
+                    if (err) {
+                        res.writeHead(500, { 'Content-Type': 'text/plain' });
+                        res.end('Error reading the Services page');
                         return;
                     }
                     res.writeHead(200, { 'Content-Type': 'text/html' });
@@ -80,6 +92,33 @@ const server = http.createServer((req, res) => {
                 });
                 break;
             }
+            case '/images/Care_Connect-removebg-preview.png': {
+                fs.readFile(path.join(__dirname, 'images', 'Care_Connect-removebg-preview.png'), (err, data) => {
+                    if (err) {
+                        res.writeHead(500, { 'Content-Type': 'text/plain' });
+                        res.end('Error reading the image');
+                        return;
+                    }
+                    res.writeHead(200, { 'Content-Type': 'image/png' });
+                    res.end(data);
+                });
+                break;
+            }
+            // Serve doctor.jpg image
+            case '/images/doctor.jpg': {
+                fs.readFile(path.join(__dirname, 'images', 'doctor.jpg'), (err, data) => {
+                    if (err) {
+                        res.writeHead(500, { 'Content-Type': 'text/plain' });
+                        res.end('Error reading the image');
+                        return;
+                    }
+                    res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+                    res.end(data);
+                });
+                break;
+            }
+            
+            
             case '/orthopedics.jpg': {
                 fs.readFile(path.join(__dirname,'images', 'orthopedics.jpg'), (err, data) => {
                     if (err) {
@@ -240,8 +279,6 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, () => {
     console.log(`Server is running at http://localhost:${PORT}`);
 });
-
-
 
 
 
