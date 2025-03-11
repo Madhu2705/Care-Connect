@@ -3,73 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardiology Doctors</title>
+    <title>Healthcare Scan</title>
+    
     <style>
+        /* General Styling */
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: white;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #d32f2f;
-        }
-        .doctor-list {
+
+        /* Hero Section */
+        .hero {
+            background: url('background.jpg') no-repeat center center/cover;
+            height: 50vh;
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             justify-content: center;
-            gap: 20px;
-        }
-        .doctor-card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 250px;
             text-align: center;
         }
-        .doctor-card img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
+
+        .content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
         }
-        .doctor-card h3 {
-            margin: 10px 0;
-            color: #333;
+
+        h1 {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .highlight {
+            color: purple;
+            font-weight: bold;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        .service {
+            background: rgba(128, 0, 128, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            width: 22%;
+            margin: 10px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .service:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .service img {
+            width: 50px;
+            height: 50px;
+        }
+
+        h3 {
+            color: white;
+        }
+
+        p {
+            color: #ccc;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Available Cardiology Doctors</h1>
-        <div class="doctor-list" id="doctorList"></div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="content">
+            <h1><span class="highlight">10 SECOND SCAN</span> Can Save Your Life!</h1>
+            <p>Your health is our priority. Get instant and accurate scans with our advanced technology.</p>
+        </div>
     </div>
 
+    <!-- Services Section -->
+    <div class="services">
+        <div class="service" onclick="showMessage('Emergency services are available 24/7.')">
+            <img src="emergency.png" alt="Emergency">
+            <h3>EMERGENCY</h3>
+            <p>Quick and reliable emergency services available 24/7.</p>
+        </div>
+        <div class="service" onclick="showMessage('New advanced medical services are now available.')">
+            <img src="services.png" alt="New Services">
+            <h3>NEW SERVICES</h3>
+            <p>Discover the latest advancements in medical technology.</p>
+        </div>
+        <div class="service" onclick="showMessage('Expert advice is available to guide you.')">
+            <img src="advice.png" alt="Our Advice">
+            <h3>OUR ADVICE</h3>
+            <p>Expert medical guidance tailored to your needs.</p>
+        </div>
+        <div class="service" onclick="showMessage('Instant online consultations are available.')">
+            <img src="help.png" alt="Online Help">
+            <h3>ONLINE HELP</h3>
+            <p>Instant online consultations with top doctors.</p>
+        </div>
+    </div>
+
+    <!-- Internal JavaScript -->
     <script>
-        const doctors = [
-            { name: "Dr. John Smith", experience: "15 years", image: "doctor.jpg" },
-            { name: "Dr. Emily Davis", experience: "10 years", image: "doctor.jpg" },
-            { name: "Dr. Mark Wilson", experience: "12 years", image: "doctor.jpg" }
-        ];
-        
-        const doctorList = document.getElementById("doctorList");
-        
-        doctors.forEach(doctor => {
-            const card = document.createElement("div");
-            card.classList.add("doctor-card");
-            card.innerHTML = `
-                <img src="images/${doctor.image}" alt="Doctor">
-                <h3>${doctor.name}</h3>
-                <p>Experience: ${doctor.experience}</p>
-            `;
-            doctorList.appendChild(card);
-        });
+        function showMessage(message) {
+            alert(message);
+        }
     </script>
+
 </body>
 </html>

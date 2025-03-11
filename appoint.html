@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Appointment Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: url('images/back.avif') no-repeat center center/cover;
+            opacity: 0.9;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(130, 57, 182, 0.9);
+            width: 45%;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: left;
+            color: white;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+            height: auto;
+            margin-left: 5%;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            font-size: 26px;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .form-group input, .form-group select {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: white;
+            color: black;
+            border: 1px solid white;
+        }
+
+        .form-group.full-width input, .form-group.full-width select {
+            width: 100%;
+        }
+
+        .submit-btn {
+            background: white;
+            color: purple;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: purple;
+            color: white;
+        }
+
+        .footer {
+            font-size: 12px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>MEDICAL APPOINTMENT FORM</h2>
+        <h3>MAKE AN APPOINTMENT</h3>
+
+        <form id="appointmentForm">
+            <div class="form-group">
+                <input type="text" id="name" placeholder="Patient Name" required>
+                <input type="date" id="date" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <select id="department" required>
+                    <option value="">Select Department</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <select id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <input type="text" id="symptoms" placeholder="Symptoms" required>
+            </div>
+            
+            <div class="form-group">
+                <select id="time" required>
+                    <option value="">Select Time</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-btn">Make an appointment</button>
+        </form>
+
+        <div class="footer">
+            © 2025, Medical Appointment Form. All Rights Reserved |
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            let symptoms = document.getElementById("symptoms").value;
+            let date = document.getElementById("date").value;
+            let department = document.getElementById("department").value;
+            let gender = document.getElementById("gender").value;
+            let time = document.getElementById("time").value;
+
+            if (name && phone && email && symptoms && date && department && gender && time) {
+                alert("Appointment booked successfully for " + name + " on " + date + " at " + time);
+            } else {
+                alert("Please fill all fields!");
+            }
+        });
+    </script>
+
+</body>
+</html>
