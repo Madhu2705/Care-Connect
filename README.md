@@ -5,7 +5,7 @@ This is a web-based Hospital Management System designed to simplify the process 
 
 **Features**
 
-Search doctors by name or specialization
+Search doctors 
 
 Book and manage doctor appointments
 
